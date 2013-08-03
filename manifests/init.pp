@@ -32,9 +32,7 @@ class kibana (
   $webserver           = undef,
 
   $ensure              = 'present',
-  $version             = undef,
-  $audit               = undef,
-  $noop                = undef,
+  $version             = 'master',
 
   $install             = 'upstream',
   $install_base_url    = $kibana::params::install_base_url,
