@@ -4,13 +4,13 @@
 #
 class kibana::params {
 
-  $install_base_url = 'https://github.com/elasticsearch/kibana/archive/'
+  $install_base_url = 'https://github.com/elasticsearch/kibana/archive'
 
   $package = 'kibana'
 
   $file = '/etc/kibana/config.js'
 
-  $file_mode = '0644'
+  $file_mode = '0664'
 
   $file_owner = 'root'
 

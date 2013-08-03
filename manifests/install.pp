@@ -19,12 +19,10 @@ class kibana::install {
 
     upstream: {
 
-      # TODO: Use another define
       puppi::netinstall { 'netinstall_kibana':
         url                 => $kibana::managed_install_url,
         destination_dir     => $kibana::install_destination,
-        owner               => $kibana::user,
-        group               => $kibana::user,
+        extracted_dir       => $kibana::extracted_dir,
       }
 
       file { 'kibana_link':
@@ -38,7 +36,6 @@ class kibana::install {
       puppi::project::archive { 'kibana':
         source      => $kibana::managed_install_url,
         deploy_root => $kibana::install_destination,
-        user        => $kibana::user,
         auto_deploy => true,
         enable      => true,
       }

@@ -73,12 +73,16 @@ class kibana (
     default  => $version,
   }
 
-  $managed_install_url = $kibana::install_url ? {
-    ''      => "${kibana::install_base_url}/kibana-${kibana::version}.zip",
-    default => $kibana::install_url,
+  if $kibana::install_url {
+    $managed_install_url = $kibana::install_url
+    $extracted_name = url_parse($kibana::install_url,'filedir')
+    $extracted_dir = "kibana-${extracted_name}"
+  } else {
+    $managed_install_url = "${kibana::install_base_url}/${kibana::version}.tar.gz"
+    $extracted_dir = "kibana-${kibana::version}"
   }
 
-  $home_dir = "${kibana::install_destination}/kibana-${kibana::version}"
+  $home_dir = "${kibana::install_destination}/${kibana::extracted_dir}"
 
   $managed_file = $kibana::install ? {
     package => $kibana::file,
