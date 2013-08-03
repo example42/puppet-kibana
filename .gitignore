@@ -1,0 +1,13 @@
+.vagrant
+.gradle
+.autotest
+.*.sw[a-z]
+.rvmrc
+.rspec_system/
+build
+pkg/
+*.un~
+Gemfile.lock
+Session.vim
+metadata.json
+spec/fixtures

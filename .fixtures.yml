@@ -1,0 +1,8 @@
+fixtures:
+  repositories:
+    "stdlib": "git://github.com/puppetlabs/puppetlabs-stdlib.git"
+    "puppi": "git://github.com/example42/puppi.git"
+    "java": "git://github.com/example42/puppet-java.git"
+    "git": "git://github.com/example42/puppet-git.git"
+  symlinks:
+    "kibana": "#{source_dir}"

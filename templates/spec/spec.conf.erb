@@ -1,0 +1,8 @@
+# This is a template used only for tests
+
+# Yaml of the whole scope
+<%= scope.to_hash.reject { |k,v| !( k.is_a?(String) && v.is_a?(String) ) }.to_yaml %>
+
+# Custom Options
+opt_a <%= @file_options_hash['opt_a'] %>
+opt_b <%= @file_options_hash['opt_b'] %>
