@@ -4,31 +4,16 @@
 #
 class kibana::params {
 
-  $install_base_url = 'https://download.kibana.org/kibana/kibana/'
+  $install_base_url = 'https://github.com/elasticsearch/kibana/archive/'
 
   $package = 'kibana'
 
-  $service = 'kibana'
-
-  $service_subscribe = Class['kibana::config']
-
-  $file = $::osfamily ? {
-    default => '/etc/kibana/kibana.yml',
-  }
-
-  $init_options_file = $::osfamily ? {
-    Debian  => '/etc/default/kibana',
-    default => '/etc/sysconfig/kibana',
-  }
+  $file = '/etc/kibana/config.js'
 
   $file_mode = '0644'
 
   $file_owner = 'root'
 
   $file_group = 'root'
-
-  $dir = $::osfamily ? {
-    default => '/etc/kibana/',
-  }
 
 }

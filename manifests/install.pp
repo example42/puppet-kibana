@@ -19,12 +19,9 @@ class kibana::install {
 
     upstream: {
 
-      if $kibana::user_create == true {
-        require kibana::user
-      }
       # TODO: Use another define
       puppi::netinstall { 'netinstall_kibana':
-        url                 => $kibana::managed_install_source,
+        url                 => $kibana::managed_install_url,
         destination_dir     => $kibana::install_destination,
         owner               => $kibana::user,
         group               => $kibana::user,
@@ -38,12 +35,8 @@ class kibana::install {
 
     puppi: {
 
-      if $kibana::bool_create_user == true {
-        require kibana::user
-      }
-
       puppi::project::archive { 'kibana':
-        source      => $kibana::managed_install_source,
+        source      => $kibana::managed_install_url,
         deploy_root => $kibana::install_destination,
         user        => $kibana::user,
         auto_deploy => true,
