@@ -16,7 +16,7 @@ class kibana::dependency {
   if $kibana::webserver == 'apache'
   and $kibana::virtualhost {
     apache::vhost { $kibana::virtualhost:
-      docroot  => $kibana::home,
+      docroot  => $kibana::home_dir,
     }
   }
 
