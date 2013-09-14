@@ -56,7 +56,7 @@ class kibana (
   validate_re($install, ['package','upstream','puppi'], 'Valid values are: package, upstream, puppi.')
   if $file_options_hash { validate_hash($file_options_hash) }
 
-  # Calculation of variables used in the module
+  # Calculation of variables used in the module
   if $file_content {
     $managed_file_content = $file_content
   } else {
