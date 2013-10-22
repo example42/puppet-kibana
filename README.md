@@ -127,4 +127,4 @@ For development time reasons the module currently uses some Example42 modules an
 
 
 ## TESTING
-[![Build Status](https://travis-ci.org/stdmod/puppet-kibana.png?branch=master)](https://travis-ci.org/stdmod/puppet-kibana)
+[![Build Status](https://api.travis-ci.org/example42/puppet-kibana.png?branch=master)](https://travis-ci.org/example42/puppet-kibana)
