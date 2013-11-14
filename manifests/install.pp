@@ -23,6 +23,7 @@ class kibana::install {
         url                 => $kibana::managed_install_url,
         destination_dir     => $kibana::install_destination,
         extracted_dir       => $kibana::extracted_dir,
+        exec_env            => $kibana::install_exec_env,
         retrieve_command    => "wget -O ${kibana::download_file_name}",
       }
 

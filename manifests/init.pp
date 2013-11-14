@@ -38,6 +38,7 @@ class kibana (
   $install_base_url    = $kibana::params::install_base_url,
   $install_url         = undef,
   $install_destination = '/opt',
+  $install_exec_env    = [],
 
   $file                = $kibana::params::file,
   $file_source         = undef,
