@@ -9,8 +9,8 @@ class kibana::install {
 
     package: {
 
-      if $kibana::package {
-        package { $kibana::package:
+      if $kibana::package_name {
+        package { $kibana::package_name:
           ensure   => $kibana::managed_package_ensure,
           provider => $kibana::package_provider,
         }

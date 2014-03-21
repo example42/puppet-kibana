@@ -32,24 +32,29 @@ class kibana (
   $webserver           = undef,
 
   $ensure              = 'present',
-  $version             = 'master',
+  $version             = 'latest',
 
   $install             = 'upstream',
-  $install_base_url    = $kibana::params::install_base_url,
+  $install_base_url    = 'http://download.elasticsearch.org/kibana/kibana/',
   $install_url         = undef,
   $install_destination = '/opt',
   $install_exec_env    = [],
 
-  $file                = $kibana::params::file,
+  $package_name        = 'kibana',
+
+  $file                = '/etc/kibana/config.js',
   $file_source         = undef,
   $file_template       = undef,
   $file_content        = undef,
   $file_options_hash   = undef,
+  $file_mode           = '0664',
+  $file_owner          = 'root',
+  $file_group          = 'root',
 
   $dependency_class    = 'kibana::dependency',
   $my_class            = undef,
 
-  ) inherits kibana::params {
+  ) {
 
 
   # Input parameters validation
@@ -79,8 +84,8 @@ class kibana (
     $download_file_name = url_parse($kibana::install_url,'filename')
     $extracted_dir = url_parse($download_file_name, 'filedir')
   } else {
-    $managed_install_url = "${kibana::install_base_url}/${kibana::version}.tar.gz"
-    $download_file_name = "${kibana::version}.tar.gz"
+    $managed_install_url = "${kibana::install_base_url}/kibana-${kibana::version}.zip"
+    $download_file_name = "kibana-${kibana::version}.zip"
     $extracted_dir = "kibana-${kibana::version}"
   }
 
