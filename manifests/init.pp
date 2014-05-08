@@ -32,10 +32,10 @@ class kibana (
   $webserver           = undef,
 
   $ensure              = 'present',
-  $version             = 'latest',
+  $version             = '3.0.1',
 
   $install             = 'upstream',
-  $install_base_url    = 'http://download.elasticsearch.org/kibana/kibana/',
+  $install_base_url    = 'http://download.elasticsearch.org/kibana/kibana',
   $install_url         = undef,
   $install_destination = '/opt',
   $install_exec_env    = [],
