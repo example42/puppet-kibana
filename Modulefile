@@ -1,5 +1,5 @@
 name         'stdmod-kibana'
-version '0.0.3'
+version '0.0.4'
 author       'Stdmod authors'
 license      'Apache2'
 project_page 'https://github.com/stdmod'
