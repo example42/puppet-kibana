@@ -1,5 +1,5 @@
 name         'example42-kibana'
-version '3.0.2'
+version '3.0.3'
 author       'Example42'
 license      'Apache2'
 project_page 'https://github.com/example42'
