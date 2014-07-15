@@ -27,4 +27,11 @@ class kibana::dependency {
     }
   }
 
+  if $kibana::webserver == 'nginx'
+  and $kibana::virtualhost {
+    nginx::vhost { $kibana::virtualhost:
+      docroot  => $kibana::home_dir,
+    }
+  }
+
 }
