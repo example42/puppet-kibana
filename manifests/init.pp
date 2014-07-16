@@ -44,7 +44,7 @@ class kibana (
 
   $file                = '/etc/kibana/config.js',
   $file_source         = undef,
-  $file_template       = undef,
+  $file_template       = 'kibana/config.js.erb',
   $file_content        = undef,
   $file_options_hash   = undef,
   $file_mode           = '0664',
