@@ -1,5 +1,13 @@
 # Puppet module: kibana
 
+## DEPRECATION NOTICE
+This module is no more actively maintained and will hardly be updated.
+
+Please find an alternative module from other authors or consider [Tiny Puppet](https://github.com/example42/puppet-tp) as replacement.
+
+If you want to maintain this module, contact [Alessandro Franceschi](https://github.com/alvagante)
+
+
 This is a Puppet module for Kibana3: http://three.kibana.org/ .
 
 It manages its installation and configuration.
