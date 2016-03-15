@@ -35,7 +35,7 @@ For development time reasons the module currently uses some Example42 modules an
 
 ## USAGE - Basic management
 
-* Install kibana fetching the upstream master.zip.
+* Install kibana fetching the upstream tarball.
   Note: By default kibana is installed but no webserver is configured to serve its files.
 
         class { 'kibana': }
@@ -50,7 +50,7 @@ For development time reasons the module currently uses some Example42 modules an
 * Install kibana from a custom url to a custom destination
 
         class { 'kibana':
-          install_url         => 'http://files.example42.com/kibana/3.1.zip',
+          install_url         => 'http://files.example42.com/kibana/3.1.tar.gz',
           install_destination => '/var/www/html', # Default: /opt
         }
 

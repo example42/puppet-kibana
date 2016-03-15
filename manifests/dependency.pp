@@ -9,13 +9,6 @@
 #
 class kibana::dependency {
 
-  if ! defined(Package['unzip']) {
-    package { 'unzip' :
-      ensure => present,
-      before => Class['kibana::install'],
-    }
-  }
-
   if $kibana::webserver {
     include $kibana::webserver
   }

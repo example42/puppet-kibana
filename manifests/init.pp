@@ -32,10 +32,10 @@ class kibana (
   $webserver           = undef,
 
   $ensure              = 'present',
-  $version             = '3.0.1',
+  $version             = '4.4.2',
 
   $install             = 'upstream',
-  $install_base_url    = 'http://download.elasticsearch.org/kibana/kibana',
+  $install_base_url    = 'http://download.elastic.co/kibana/kibana',
   $install_url         = undef,
   $install_destination = '/opt',
   $install_exec_env    = [],
@@ -79,14 +79,19 @@ class kibana (
     default  => $version,
   }
 
+  $arch = $architecture ? {
+    'i386'  => 'x86',
+    'x86'   => 'x86',
+    default => 'x64',
+  }
   if $kibana::install_url {
     $managed_install_url = $kibana::install_url
     $download_file_name = url_parse($kibana::install_url,'filename')
     $extracted_dir = url_parse($download_file_name, 'filedir')
   } else {
-    $managed_install_url = "${kibana::install_base_url}/kibana-${kibana::version}.zip"
-    $download_file_name = "kibana-${kibana::version}.zip"
-    $extracted_dir = "kibana-${kibana::version}"
+    $managed_install_url = "${kibana::install_base_url}/kibana-${kibana::version}-linux-${arch}.tar.gz"
+    $download_file_name = "kibana-${kibana::version}-linux-${arch}.tar.gz"
+    $extracted_dir = "kibana-${kibana::version}-linux-${arch}"
   }
 
   $home_dir = "${kibana::install_destination}/${kibana::extracted_dir}"
